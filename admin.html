@@ -136,19 +136,37 @@
     </div>
 
     <script>
-        const ADMIN_PASSWORD = 'angar2025'; // This should be moved to environment variables in production
         let currentMenu = null;
 
-        function verifyPassword() {
+        async function verifyPassword() {
             const password = document.getElementById('adminPassword').value;
-            if (password === ADMIN_PASSWORD) {
-                document.querySelector('.password-section').style.display = 'none';
-                document.getElementById('adminContent').classList.remove('hidden');
-                loadCurrentMenu();
-            } else {
-                showStatus('Incorrect password', false);
+            try {
+                const response = await fetch('/.netlify/functions/verify-password', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                        'Authorization': `Bearer ${password}`
+                    }
+                });
+                
+                if (response.ok) {
+                    document.querySelector('.password-section').style.display = 'none';
+                    document.getElementById('adminContent').classList.remove('hidden');
+                    loadCurrentMenu();
+                } else {
+                    showStatus('Incorrect password', false);
+                }
+            } catch (error) {
+                showStatus('Error verifying password: ' + error.message, false);
             }
         }
+
+        // Add event listener for Enter key on password input
+        document.getElementById('adminPassword').addEventListener('keypress', function(e) {
+            if (e.key === 'Enter') {
+                verifyPassword();
+            }
+        });
 
         async function loadCurrentMenu() {
             try {
