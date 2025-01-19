@@ -727,7 +727,7 @@ button:focus, button:active, a:focus, a:active {
     height: 60px;
     font-size: 24px;
     cursor: pointer;
-    opacity: 0.4;
+    opacity: 1; /* Changed from 0.4 to always show */
     transition: opacity 0.3s ease, background-color 0.3s ease;
     z-index: 1000;
 }
@@ -1003,6 +1003,25 @@ body {
         padding-top: env(safe-area-inset-top, 0);
     }
 }
+
+.menu-item.signature-cocktail::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, rgba(255,69,0,0.1) 0%, rgba(255,0,87,0.1) 100%);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    border-radius: 15px;
+    pointer-events: none;
+}
+
+.menu-item.signature-cocktail:active::before,
+.menu-item.signature-cocktail.active::before {
+    opacity: 1;
+}
     </style>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
 </head>
@@ -1064,16 +1083,21 @@ body {
             const existingItem = cart.find(cartItem => cartItem.id === item.id);
             if (existingItem) {
                 existingItem.quantity += 1;
-                    } else {
+            } else {
                 cart.push({ ...item, quantity: 1 });
             }
             updateCartButton();
             
-            // Add visual feedback
+            // Add visual and haptic feedback
             const menuItem = document.querySelector(`[data-id="${item.id}"]`);
             if (menuItem) {
                 menuItem.classList.add('shake');
                 setTimeout(() => menuItem.classList.remove('shake'), 500);
+                
+                // Add haptic feedback for cart operations
+                if (window.Telegram?.WebApp?.HapticFeedback) {
+                    window.Telegram.WebApp.HapticFeedback.impactOccurred('medium');
+                }
             }
         }
 
@@ -1149,15 +1173,20 @@ body {
             cart[itemIndex].quantity += change;
             if (cart[itemIndex].quantity <= 0) {
                 cart.splice(itemIndex, 1);
-                        }
-                        updateCartButton();
+            }
+            updateCartButton();
+            
+            // Add haptic feedback
+            if (window.Telegram?.WebApp?.HapticFeedback) {
+                window.Telegram.WebApp.HapticFeedback.impactOccurred('light');
+            }
             
             if (keepCartOpen) {
                 const cartModal = document.querySelector('.cart-modal');
                 if (cartModal) {
                     updateCartContent(cartModal);
                 }
-                    } else {
+            } else {
                 showCart();
             }
         }
@@ -1165,6 +1194,11 @@ body {
         function clearCart(keepCartOpen = false) {
             cart = [];
             updateCartButton();
+            
+            // Add haptic feedback
+            if (window.Telegram?.WebApp?.HapticFeedback) {
+                window.Telegram.WebApp.HapticFeedback.impactOccurred('heavy');
+            }
             
             if (keepCartOpen) {
                 const cartModal = document.querySelector('.cart-modal');
