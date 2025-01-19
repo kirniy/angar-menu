@@ -1,25 +1,20 @@
-plugins = []
-headers = []
-redirects = []
+[build]
+  functions = "netlify/functions"
+  publish = "."
 
 [functions]
   node_bundler = "esbuild"
 
-[build]
-  functions = "netlify/functions"
-  publish = "."
+[build.environment]
+  GITHUB_TOKEN = "placeholder"
+  GITHUB_OWNER = "placeholder"
+  GITHUB_REPO = "placeholder"
+  ADMIN_PASSWORD = "placeholder"
 
 [[redirects]]
   from = "/*"
   to = "/index.html"
   status = 200
-
-[build.environment]
-  # These will be replaced with actual values in Netlify's dashboard
-  GITHUB_TOKEN = "placeholder"
-  GITHUB_OWNER = "placeholder"
-  GITHUB_REPO = "placeholder"
-  ADMIN_PASSWORD = "placeholder"
 
 [build.processing]
 
