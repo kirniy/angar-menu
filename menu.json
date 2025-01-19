@@ -2,7 +2,10 @@
   "config": {
     "currency": "₽",
     "defaultLang": "ru",
-    "menuTypes": ["signature", "main"]
+    "menuTypes": [
+      "signature",
+      "main"
+    ]
   },
   "navigation": [
     {
@@ -15,12 +18,30 @@
       "title": "ОСНОВНОЕ",
       "icon": "fas fa-glass-martini-alt",
       "sections": [
-        {"id": "classic-cocktails", "title": "CLASSIC"},
-        {"id": "shots", "title": "ШОТЫ/СЕТЫ"},
-        {"id": "mix-drinks", "title": "МИКСЫ"},
-        {"id": "spirits", "title": "КРЕПКОЕ"},
-        {"id": "beer", "title": "ПИВО"},
-        {"id": "energy-drinks", "title": "ENERGY"}
+        {
+          "id": "classic-cocktails",
+          "title": "CLASSIC"
+        },
+        {
+          "id": "shots",
+          "title": "ШОТЫ/СЕТЫ"
+        },
+        {
+          "id": "mix-drinks",
+          "title": "МИКСЫ"
+        },
+        {
+          "id": "spirits",
+          "title": "КРЕПКОЕ"
+        },
+        {
+          "id": "beer",
+          "title": "ПИВО"
+        },
+        {
+          "id": "energy-drinks",
+          "title": "ENERGY"
+        }
       ]
     }
   ],
@@ -34,7 +55,7 @@
           "id": "boiler-room",
           "type": "signature",
           "name": "Boiler Room",
-          "price": 650,
+          "price": 700,
           "currency": "₽",
           "description": "Огненный микс, воплощающий энергию легендарных вечеринок. Взрывная смесь рома и вишни разжигает атмосферу танцпола.",
           "ingredients": "Ром Diablo Negro Caribbean, ликёр трипл сек, вишневый сироп, миндальный сироп, Seven Up",
