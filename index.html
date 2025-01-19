@@ -1120,7 +1120,7 @@ body {
                 const existingModal = document.querySelector('.cart-modal');
                 if (existingModal) {
                     document.body.removeChild(existingModal);
-                return;
+                    return;
                 }
 
                 const cartModal = document.createElement('div');
@@ -1173,8 +1173,8 @@ body {
             cart[itemIndex].quantity += change;
             if (cart[itemIndex].quantity <= 0) {
                 cart.splice(itemIndex, 1);
-            }
-            updateCartButton();
+                        }
+                        updateCartButton();
             
             // Add haptic feedback
             if (window.Telegram?.WebApp?.HapticFeedback) {
@@ -1186,7 +1186,7 @@ body {
                 if (cartModal) {
                     updateCartContent(cartModal);
                 }
-            } else {
+                    } else {
                 showCart();
             }
         }
@@ -1223,6 +1223,39 @@ body {
             if (window.Telegram && window.Telegram.WebApp) {
                 const webapp = window.Telegram.WebApp;
                 webapp.setHeaderColor('#fb4d22');
+                webapp.expand(); // Ensure the WebApp is expanded
+
+                // Handle viewport for cart modal
+                const originalViewportHeight = webapp.viewportHeight;
+                
+                function updateWebAppViewport(isExpanded) {
+                    if (isExpanded) {
+                        webapp.expand();
+                    } else {
+                        webapp.setViewportHeight(originalViewportHeight);
+                    }
+                }
+
+                // Override showCart to handle viewport
+                const originalShowCart = showCart;
+                showCart = function() {
+                    const existingModal = document.querySelector('.cart-modal');
+                    if (existingModal) {
+                        document.body.removeChild(existingModal);
+                        updateWebAppViewport(false);
+                        return;
+                    }
+                    
+                    updateWebAppViewport(true);
+                    originalShowCart();
+                };
+
+                // Override updateCartContent to handle viewport
+                const originalUpdateCartContent = updateCartContent;
+                updateCartContent = function(cartModal) {
+                    originalUpdateCartContent(cartModal);
+                    updateWebAppViewport(true);
+                };
             }
     </script>
 </body>
