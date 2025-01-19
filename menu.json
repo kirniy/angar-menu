@@ -1,0 +1,745 @@
+{
+  "config": {
+    "currency": "₽",
+    "defaultLang": "ru",
+    "menuTypes": ["signature", "main"]
+  },
+  "navigation": [
+    {
+      "id": "signature",
+      "title": "АВТОРСКИЕ",
+      "icon": "fas fa-star"
+    },
+    {
+      "id": "main",
+      "title": "ОСНОВНОЕ",
+      "icon": "fas fa-glass-martini-alt",
+      "sections": [
+        {"id": "classic-cocktails", "title": "CLASSIC"},
+        {"id": "shots", "title": "ШОТЫ/СЕТЫ"},
+        {"id": "mix-drinks", "title": "МИКСЫ"},
+        {"id": "spirits", "title": "КРЕПКОЕ"},
+        {"id": "beer", "title": "ПИВО"},
+        {"id": "energy-drinks", "title": "ENERGY"}
+      ]
+    }
+  ],
+  "menu": {
+    "signature": {
+      "id": "signature-cocktails",
+      "title": "АВТОРСКИЕ КОКТЕЙЛИ",
+      "type": "signature",
+      "items": [
+        {
+          "id": "boiler-room",
+          "type": "signature",
+          "name": "Boiler Room",
+          "price": 650,
+          "currency": "₽",
+          "description": "Огненный микс, воплощающий энергию легендарных вечеринок. Взрывная смесь рома и вишни разжигает атмосферу танцпола.",
+          "ingredients": "Ром Diablo Negro Caribbean, ликёр трипл сек, вишневый сироп, миндальный сироп, Seven Up",
+          "image": {
+            "path": "https://i.ibb.co/927tq1r/boilerroom.png",
+            "class": "item-logo-boiler"
+          },
+          "volume": "300 мл"
+        },
+        {
+          "id": "rumble",
+          "type": "signature",
+          "name": "Rumble",
+          "price": 650,
+          "currency": "₽",
+          "description": "Ударная волна вкуса. Джин и кокос сталкиваются в эпическом противостоянии, оставляя за собой шлейф тропического грома.",
+          "ingredients": "Джин Royal Raven Dry, кокосовый ликёр, гренадин, лимонный фреш, ананасовый сок",
+          "image": {
+            "path": "https://i.ibb.co/myGdLWq/rumble.png",
+            "class": "item-logo"
+          },
+          "volume": "300 мл"
+        },
+        {
+          "id": "techno-haze",
+          "type": "signature",
+          "name": "Techno Haze",
+          "price": 650,
+          "currency": "₽",
+          "description": "Погружение в пульсирующий мир берлинского техно. Джин и личи создают электрический вихрь ощущений.",
+          "ingredients": "Джин Royal Raven Dry, ликёр личи, лимонный фреш, сироп бабл-гам, тоник, яблочный сок",
+          "image": {
+            "path": "https://i.ibb.co/1TqhpyH/technohazenew.png",
+            "class": "item-logo-techno"
+          },
+          "volume": "300 мл"
+        },
+        {
+          "id": "jokers-potion",
+          "type": "signature",
+          "name": "Joker's Potion",
+          "price": 650,
+          "currency": "₽",
+          "description": "Коктейль-провокация. Обманчиво нежные ноты скрывают безумный характер, достойный главного злодея Готэма.",
+          "ingredients": "Малиновый ликёр, сливки, вишневый сок, ананасовый сок, сироп попкорн",
+          "image": {
+            "path": "https://i.ibb.co/Ws2S2X9/jokerspotion.png",
+            "class": "item-logo-joker"
+          },
+          "volume": "300 мл"
+        },
+        {
+          "id": "blvck-cvrnvge",
+          "type": "signature",
+          "name": "BLVCK CVRNVGE",
+          "price": 650,
+          "currency": "₽",
+          "description": "Фирменный коктейль от арт-директора ANGAR. Тьма обретает форму в этом мощном миксе, воплощающем дух андеграундной сцены.",
+          "ingredients": "Водка Хаски, тоник, мятный сироп, лимон",
+          "image": {
+            "path": "https://i.ibb.co/kQcf04H/blackcarnagenew.png",
+            "class": "item-logo-blvck"
+          },
+          "isSignature": true,
+          "volume": "300 мл"
+        },
+        {
+          "id": "crystal-castles",
+          "type": "signature",
+          "name": "Crystal Castles",
+          "price": 700,
+          "currency": "₽",
+          "description": "Эклектичный шедевр, вдохновленный электроникой. Сложный микс крепких напитков создает неповторимую симфонию ощущений.",
+          "ingredients": "Водка Хаски, джин Royal Raven Dry, ром Diablo Negro Caribbean, текила La Mision, дынный ликёр, лимонный фреш, Seven Up, лимон",
+          "image": {
+            "path": "https://i.ibb.co/1zgWYBS/crystalcastles.png",
+            "class": "item-logo"
+          },
+          "volume": "300 мл"
+        },
+        {
+          "id": "born-irish-highball",
+          "type": "signature",
+          "name": "Born Irish Highball",
+          "price": 900,
+          "currency": "₽",
+          "description": "Ирландский характер в современном прочтении. Виски Born Irish раскрывается в элегантном миксе с неожиданным твистом.",
+          "ingredients": "Виски Born Irish, персиковый ликёр, лимонный фреш, яблочный сок, газированная вода, лимон",
+          "image": {
+            "path": "https://i.ibb.co/484kftX/irish.png",
+            "class": "item-logo-irish"
+          },
+          "volume": "300 мл"
+        }
+      ]
+    },
+    "main": [
+      {
+        "id": "classic-cocktails",
+        "type": "main",
+        "title": "CLASSIC КОКТЕЙЛИ",
+        "items": [
+          {
+            "id": "blue-lagoon",
+            "type": "main",
+            "name": "Blue Lagoon",
+            "price": 600,
+            "currency": "₽",
+            "ingredients": "Водка Хаски, ликёр блю кюрасао, лимонный фреш, Seven Up, лимон",
+            "volume": "300 мл"
+          },
+          {
+            "id": "white-russian",
+            "type": "main",
+            "name": "White Russian",
+            "price": 550,
+            "currency": "₽",
+            "ingredients": "Водка Хаски, кофейный ликёр, сливки",
+            "volume": "120 мл"
+          },
+          {
+            "id": "negroni",
+            "type": "main",
+            "name": "Negroni",
+            "price": 650,
+            "currency": "₽",
+            "ingredients": "Джин Royal Raven Dry, Martini Rosso, биттер, апельсин",
+            "volume": "120 мл"
+          },
+          {
+            "id": "tequila-sunrise",
+            "type": "main",
+            "name": "Tequila Sunrise",
+            "price": 700,
+            "currency": "₽",
+            "ingredients": "Текила La Mision, апельсин, апельсиновый сок, сироп гренадин",
+            "volume": "300 мл"
+          },
+          {
+            "id": "long-island-ice-tea",
+            "type": "main",
+            "name": "Long Island Ice Tea",
+            "price": 700,
+            "currency": "₽",
+            "ingredients": "Водка Хаски, Джин Royal Raven Dry, Ром Diablo Negro Caribbean, Текила La Mision, ликёр трипл сек, лимонный фреш, кола, лимон",
+            "volume": "350 мл"
+          },
+          {
+            "id": "aperol-spritz",
+            "type": "main",
+            "name": "Aperol Spritz",
+            "price": 700,
+            "currency": "₽",
+            "ingredients": "Aperol, игристое вино, газированная вода, апельсин",
+            "volume": "300 мл"
+          },
+          {
+            "id": "born-irish-whiskey-sour",
+            "type": "main",
+            "name": "Born Irish Whiskey Sour",
+            "price": 900,
+            "currency": "₽",
+            "ingredients": "Виски Born Irish, лимонный фреш, сироп юдзу, яичный белок",
+            "volume": "300 мл"
+          }
+        ]
+      },
+      {
+        "id": "shots",
+        "type": "main",
+        "title": "ШОТЫ",
+        "items": [
+          {
+            "id": "boyarsky",
+            "type": "main",
+            "name": "Boyarsky",
+            "price": 400,
+            "currency": "₽",
+            "ingredients": "Водка Хаски, сироп гренадин, Tabasco",
+            "volume": "40 мл"
+          },
+          {
+            "id": "b52",
+            "type": "main",
+            "name": "B52",
+            "price": 450,
+            "currency": "₽",
+            "ingredients": "Кофейный ликёр, сливочный ликёр, ликёр трипл сек",
+            "volume": "40 мл"
+          },
+          {
+            "id": "red-dog",
+            "type": "main",
+            "name": "Red Dog",
+            "price": 550,
+            "currency": "₽",
+            "ingredients": "Самбука, Текила La Mision, Tabasco",
+            "volume": "40 мл"
+          },
+          {
+            "id": "death",
+            "type": "main",
+            "name": "Death",
+            "price": 550,
+            "currency": "₽",
+            "ingredients": "Абсент, Sibbitter, самбука",
+            "volume": "40 мл"
+          },
+          {
+            "id": "tequila-boom",
+            "type": "main",
+            "name": "Tequila Boom",
+            "price": 600,
+            "currency": "₽",
+            "ingredients": "Текила La Mision, Seven Up",
+            "volume": "140 мл"
+          }
+        ]
+      },
+      {
+        "id": "party-sets",
+        "type": "main",
+        "title": "ПАТИ СЕТЫ",
+        "items": [
+          {
+            "id": "dream-rave",
+            "type": "main",
+            "name": "Dream Rave",
+            "price": 800,
+            "currency": "₽",
+            "ingredients": "Водка Хаски, сироп вишня, лимонный фреш",
+            "volume": "160 мл"
+          },
+          {
+            "id": "acid-house",
+            "type": "main",
+            "name": "Acid House",
+            "price": 900,
+            "currency": "₽",
+            "ingredients": "Джин Royal Raven Dry, ликёр блю кюрасао, лимонный фреш, сироп кокос",
+            "volume": "160 мл"
+          },
+          {
+            "id": "russian-phonk",
+            "type": "main",
+            "name": "Russian Phonk",
+            "price": 900,
+            "currency": "₽",
+            "ingredients": "Ром Diablo Negro Caribbean, ликёр персик, лимонный фреш, сироп маракуйя",
+            "volume": "160 мл"
+          },
+          {
+            "id": "bass-drop",
+            "type": "main",
+            "name": "Bass Drop",
+            "price": 1000,
+            "currency": "₽",
+            "ingredients": "Sibbitter, сливочный ликёр",
+            "volume": "160 мл"
+          },
+          {
+            "id": "afterparty",
+            "type": "main",
+            "name": "Afterparty",
+            "price": 1200,
+            "currency": "₽",
+            "ingredients": "Текила La Mision, ликёр персик, сироп бабл гам, лимонный фреш",
+            "volume": "160 мл"
+          }
+        ]
+      },
+      {
+        "id": "mix-drinks",
+        "type": "main",
+        "title": "МИКС ДРИНКИ",
+        "items": [
+          {
+            "id": "whiskey-cola",
+            "type": "main",
+            "name": "Whiskey Cola",
+            "price": 450,
+            "currency": "₽",
+            "ingredients": "Виски Your Choice, кола, лимон",
+            "volume": "300 мл"
+          },
+          {
+            "id": "gin-tonic",
+            "type": "main",
+            "name": "Gin Tonic",
+            "price": 450,
+            "currency": "₽",
+            "ingredients": "Джин Royal Raven Dry, тоник, лайм",
+            "volume": "300 мл"
+          },
+          {
+            "id": "cuba-libre",
+            "type": "main",
+            "name": "Cuba Libre",
+            "price": 450,
+            "currency": "₽",
+            "ingredients": "Ром Diablo Negro Caribbean, кола, лайм",
+            "volume": "300 мл"
+          },
+          {
+            "id": "bosford-tonic",
+            "type": "main",
+            "name": "Bosford Tonic",
+            "price": 600,
+            "currency": "₽",
+            "ingredients": "Bosford, тоник, лайм",
+            "volume": "300 мл"
+          },
+          {
+            "id": "william-lawson's-cola",
+            "type": "main",
+            "name": "William Lawson's Cola",
+            "price": 600,
+            "currency": "₽",
+            "ingredients": "William Lawson's, кола, лимон",
+            "volume": "300 мл"
+          },
+          {
+            "id": "rom-diablo-negro-caribbean-cola",
+            "type": "main",
+            "name": "Ром Diablo Negro Caribbean Cola",
+            "price": 600,
+            "currency": "₽",
+            "ingredients": "Ром Diablo Negro Caribbean, кола, лайм",
+            "volume": "300 мл"
+          },
+          {
+            "id": "bombay-tonic",
+            "type": "main",
+            "name": "Bombay Tonic",
+            "price": 700,
+            "currency": "₽",
+            "ingredients": "Джин Bombay Sapphire, тоник, лайм",
+            "volume": "300 мл"
+          },
+          {
+            "id": "jawbox-tonic",
+            "type": "main",
+            "name": "JawBox Tonic",
+            "price": 800,
+            "currency": "₽",
+            "ingredients": "Джин JawBox, тоник, лайм",
+            "volume": "300 мл"
+          }
+        ]
+      },
+      {
+        "id": "spirits",
+        "type": "main",
+        "title": "КРЕПКИЙ АЛКОГОЛЬ",
+        "items": [
+          {
+            "id": "haski",
+            "type": "spirits",
+            "name": "Хаски",
+            "price": 300,
+            "currency": "₽",
+            "ingredients": "40 мл"
+          },
+          {
+            "id": "lab-40",
+            "type": "spirits",
+            "name": "LAB №40",
+            "price": 350,
+            "currency": "₽",
+            "ingredients": "40 мл"
+          },
+          {
+            "id": "absolut",
+            "type": "spirits",
+            "name": "Absolut",
+            "price": 400,
+            "currency": "₽",
+            "ingredients": "40 мл"
+          },
+          {
+            "id": "koskenkorva",
+            "type": "spirits",
+            "name": "Koskenkorva",
+            "price": 400,
+            "currency": "₽",
+            "ingredients": "40 мл"
+          },
+          {
+            "id": "grey-goose",
+            "type": "spirits",
+            "name": "Grey Goose",
+            "price": 500,
+            "currency": "₽",
+            "ingredients": "40 мл"
+          },
+          {
+            "id": "royal-raven-dry",
+            "type": "spirits",
+            "name": "Royal Raven Dry",
+            "price": 350,
+            "currency": "₽",
+            "ingredients": "40 мл"
+          },
+          {
+            "id": "bosford",
+            "type": "spirits",
+            "name": "Bosford",
+            "price": 450,
+            "currency": "₽",
+            "ingredients": "40 мл"
+          },
+          {
+            "id": "bombay-sapphire",
+            "type": "spirits",
+            "name": "Bombay Sapphire",
+            "price": 550,
+            "currency": "₽",
+            "ingredients": "40 мл"
+          },
+          {
+            "id": "jawbox",
+            "type": "spirits",
+            "name": "JawBox",
+            "price": 600,
+            "currency": "₽",
+            "ingredients": "40 мл"
+          },
+          {
+            "id": "diablo-negro-caribbean",
+            "type": "spirits",
+            "name": "Diablo Negro Caribbean",
+            "price": 350,
+            "currency": "₽",
+            "ingredients": "40 мл"
+          },
+          {
+            "id": "red-bonny",
+            "type": "spirits",
+            "name": "Red Bonny",
+            "price": 600,
+            "currency": "₽",
+            "ingredients": "40 мл"
+          },
+          {
+            "id": "la-mision-silver",
+            "type": "spirits",
+            "name": "La Mision Silver",
+            "price": 450,
+            "currency": "₽",
+            "ingredients": "40 мл"
+          },
+          {
+            "id": "pueblo-viejo-blanco",
+            "type": "spirits",
+            "name": "Pueblo Viejo Blanco",
+            "price": 600,
+            "currency": "₽",
+            "ingredients": "40 мл"
+          },
+          {
+            "id": "pueblo-viejo-reposado",
+            "type": "spirits",
+            "name": "Pueblo Viejo Reposado",
+            "price": 700,
+            "currency": "₽",
+            "ingredients": "40 мл"
+          },
+          {
+            "id": "william-lawson's",
+            "type": "spirits",
+            "name": "William Lawson's",
+            "price": 400,
+            "currency": "₽",
+            "ingredients": "40 мл"
+          },
+          {
+            "id": "ballantine's",
+            "type": "spirits",
+            "name": "Ballantine's",
+            "price": 550,
+            "currency": "₽",
+            "ingredients": "40 мл"
+          },
+          {
+            "id": "jameson",
+            "type": "spirits",
+            "name": "Jameson",
+            "price": 600,
+            "currency": "₽",
+            "ingredients": "40 мл"
+          },
+          {
+            "id": "jack-daniel's",
+            "type": "spirits",
+            "name": "Jack Daniel's",
+            "price": 600,
+            "currency": "₽",
+            "ingredients": "40 мл"
+          },
+          {
+            "id": "jim-beam",
+            "type": "spirits",
+            "name": "Jim Beam",
+            "price": 600,
+            "currency": "₽",
+            "ingredients": "40 мл"
+          },
+          {
+            "id": "born-irish",
+            "type": "spirits",
+            "name": "Born Irish",
+            "price": 700,
+            "currency": "₽",
+            "ingredients": "40 мл"
+          },
+          {
+            "id": "chivas-regal-12-years-old",
+            "type": "spirits",
+            "name": "Chivas Regal 12 Years Old",
+            "price": 700,
+            "currency": "₽",
+            "ingredients": "40 мл"
+          }
+        ]
+      },
+      {
+        "id": "wine",
+        "type": "main",
+        "title": "ВИНО",
+        "items": [
+          {
+            "id": "senorio-de-segorbe-sg-tempranillo",
+            "type": "wine",
+            "name": "Senorio De Segorbe SG Tempranillo",
+            "price": 450,
+            "currency": "₽",
+            "ingredients": "125 мл"
+          },
+          {
+            "id": "senorio-de-segorbe-sg-macabeo",
+            "type": "wine",
+            "name": "Senorio De Segorbe SG Macabeo",
+            "price": 450,
+            "currency": "₽",
+            "ingredients": "125 мл"
+          },
+          {
+            "id": "martini-prosecco-d-o-c",
+            "type": "wine",
+            "name": "Martini Prosecco D.O.C.",
+            "price": 4000,
+            "currency": "₽",
+            "ingredients": "750 мл"
+          },
+          {
+            "id": "martini-asti-d-o-c-g",
+            "type": "wine",
+            "name": "Martini Asti D.O.C.G.",
+            "price": 4000,
+            "currency": "₽",
+            "ingredients": "750 мл"
+          }
+        ]
+      },
+      {
+        "id": "beer",
+        "type": "main",
+        "title": "ПИВО",
+        "items": [
+          {
+            "id": "bud-bezalk",
+            "type": "beer",
+            "name": "Bud (безалк.)",
+            "price": 400,
+            "currency": "₽",
+            "ingredients": "330 мл"
+          },
+          {
+            "id": "bud",
+            "type": "beer",
+            "name": "Bud",
+            "price": 450,
+            "currency": "₽",
+            "ingredients": "440 мл"
+          },
+          {
+            "id": "sidr",
+            "type": "beer",
+            "name": "Сидр",
+            "price": 450,
+            "currency": "₽",
+            "ingredients": "330 мл"
+          },
+          {
+            "id": "löwenbraü-dunkel",
+            "type": "beer",
+            "name": "Löwenbraü Dunkel",
+            "price": 450,
+            "currency": "₽",
+            "ingredients": "450 мл"
+          },
+          {
+            "id": "hoegaarden",
+            "type": "beer",
+            "name": "Hoegaarden",
+            "price": 500,
+            "currency": "₽",
+            "ingredients": "450 мл"
+          },
+          {
+            "id": "corona-extra",
+            "type": "beer",
+            "name": "Corona Extra",
+            "price": 550,
+            "currency": "₽",
+            "ingredients": "330 мл"
+          }
+        ]
+      },
+      {
+        "id": "energy-drinks",
+        "type": "main",
+        "title": "ЭНЕРГЕТИКИ",
+        "items": [
+          {
+            "id": "e-on-black-power",
+            "type": "energy-drinks",
+            "name": "E-ON Black Power",
+            "price": 200,
+            "currency": "₽",
+            "ingredients": "Энергетический напиток со вкусом грейпфрута. Рекомендуем с Ром Diablo Negro Caribbean",
+            "volume": "250 мл"
+          },
+          {
+            "id": "e-on-kiwi-blast",
+            "type": "energy-drinks",
+            "name": "E-ON Kiwi Blast",
+            "price": 250,
+            "currency": "₽",
+            "ingredients": "",
+            "volume": "250 мл"
+          },
+          {
+            "id": "e-on-danger-berry",
+            "type": "energy-drinks",
+            "name": "E-ON Danger Berry",
+            "price": 200,
+            "currency": "₽",
+            "ingredients": "Энергетический напиток со вкусом малины. Рекомендуем с Ром Diablo Negro Caribbean",
+            "volume": "250 мл"
+          },
+          {
+            "id": "e-on-lemon-grass",
+            "type": "energy-drinks",
+            "name": "E-ON Lemon Grass",
+            "price": 200,
+            "currency": "₽",
+            "ingredients": "Энергетический напиток со вкусом лемонграсса. Рекомендуем с Джин Royal Raven Dry",
+            "volume": "250 мл"
+          }
+        ]
+      },
+      {
+        "id": "soft-drinks",
+        "type": "main",
+        "title": "SOFT DRINKS",
+        "items": [
+          {
+            "id": "сок",
+            "type": "soft-drinks",
+            "name": "Сок",
+            "price": 200,
+            "currency": "₽",
+            "ingredients": "",
+            "volume": "200 мл"
+          },
+          {
+            "id": "вода",
+            "type": "soft-drinks",
+            "name": "Вода",
+            "price": 200,
+            "currency": "₽",
+            "ingredients": "",
+            "volume": "500 мл"
+          },
+          {
+            "id": "газировка-кола-тоник",
+            "type": "soft-drinks",
+            "name": "Газировка (кола, тоник)",
+            "price": 250,
+            "currency": "₽",
+            "ingredients": "",
+            "volume": "330 мл"
+          },
+          {
+            "id": "лимонад-экзотик-пина-колада",
+            "type": "soft-drinks",
+            "name": "Лимонад (экзотик, пина колада)",
+            "price": 250,
+            "currency": "₽",
+            "ingredients": "",
+            "volume": "350 мл"
+          }
+        ]
+      }
+    ]
+  }
+}
