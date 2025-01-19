@@ -137,6 +137,7 @@
 
     <script>
         let currentMenu = null;
+        let verifiedPassword = null;  // Store the password after verification
 
         async function verifyPassword() {
             const password = document.getElementById('adminPassword').value;
@@ -150,6 +151,7 @@
                 });
                 
                 if (response.ok) {
+                    verifiedPassword = password;  // Store the verified password
                     document.querySelector('.password-section').style.display = 'none';
                     document.getElementById('adminContent').classList.remove('hidden');
                     loadCurrentMenu();
@@ -221,7 +223,7 @@
                     body: JSON.stringify(newMenu),
                     headers: {
                         'Content-Type': 'application/json',
-                        'Authorization': `Bearer ${ADMIN_PASSWORD}`
+                        'Authorization': `Bearer ${verifiedPassword}`
                     }
                 });
 
